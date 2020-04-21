@@ -5,8 +5,6 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(id: params[:session][:user_id])
-    
-    @user = User.find_by(id: params[:session][:user_id])
     if @user
       login(@user.id)
       redirect_to user_path(@user.id)
