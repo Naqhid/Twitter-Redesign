@@ -16,14 +16,14 @@ ActiveRecord::Schema.define(version: 2020_04_21_164628) do
   enable_extension "plpgsql"
 
   create_table "followings", force: :cascade do |t|
-    t.integer "followerid"
-    t.integer "followedid"
+    t.integer "follower_id"
+    t.integer "followed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "opinions", force: :cascade do |t|
-    t.integer "authorid"
+    t.integer "author_id"
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
