@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates :username, presence: true, length: { maximum: 10 }
+  validates :username, uniqueness:true, presence: true, length: { maximum: 10 }
   validates :fullname, presence: true, length: { maximum: 50 }
 
   has_many :opinions

@@ -1,4 +1,4 @@
-class UsesController < ApplicationController
+class UsersController < ApplicationController
   def new
     @user = User.new
   end
@@ -13,6 +13,6 @@ class UsesController < ApplicationController
     end
   end
   def show
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
   end
 end

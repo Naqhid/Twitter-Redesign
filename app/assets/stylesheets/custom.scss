@@ -1,2 +1,74 @@
 @import "bootstrap-sprockets";
-@import "bootstrap"
+@import "bootstrap";
+
+$font-color: #62778a;
+$divisor-color: #172531;
+$top-background: #1b2a3d;
+$main-background: #213246;
+$selector-blue: #4d99d3;
+
+.sidebar {
+  background-color: $main-background;
+  font-family: 'Poppins', sans-serif;
+  color: $font-color;
+  width: 350px;
+  height: 100%;
+  position: absolute;
+  .profile-user {
+    display: flex;
+    background-color: $top-background;
+    padding: 20px;
+    h3{
+      margin-left: 20px;
+    }
+  }
+  .image{
+    background-color: white;
+    width: 55px;
+  }
+  .profile-follows{
+    display: flex;
+    margin-bottom: 10px;
+    background-color: $top-background;
+    border-top: 3px solid $divisor-color;
+  }
+  .follows{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    h4{
+      margin-bottom: 0px;
+      color: white;
+      font-weight: bold;
+    }
+  }
+  .divisor{
+    width: 1px;
+    background-color: $divisor-color;
+  }
+  .profile-links{
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    font-weight: 500px;
+    :hover{
+      background-color: $selector-blue;
+      color: white;
+    }
+    a{
+      color: $font-color;
+      text-decoration: none;
+      cursor: pointer;
+      margin-left: 10px;
+      :hover{
+        color: white;
+      }
+    }
+    div{
+      display: flex;
+      align-items: baseline;
+      padding: 20px;
+    }
+  }
+}
