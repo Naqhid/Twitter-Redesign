@@ -1,20 +1,44 @@
-<div class="sidebar">
+<div class="sidebar d-flex column">
   <div class="profile-user">
-    <img>
-    <h3>NAME</h3>
+    <img class="image" src="https://pbs.twimg.com/profile_images/1036730403514736650/PCRxFiEt.jpg">
+    <h3><%= @user.username %></h3>
   </div>
   <div class="profile-follows">
-    <div class="following">
-      <h4>Following</h4>
+    <div class="follows">
+      <h4>200</h4>
+      <p>Following</p>
     </div>
-    <div class="following">
-      <h4>Followers</h4>
+    <div class="divisor"></div>
+    <div class="follows">
+      <h4>200</h4>
+      <p>Followers</p>
     </div>
   </div>
   <div class="profile-links">
-    <a>HOME</a>
-    <a>CONNECT</a>
-    <a>DISCOVER</a>
-    <a>PROFILE</a>
+    <div>
+      <span class="material-icons">home</span>
+      <a>HOME</a>
+    </div>
+    <div>
+      <span class="material-icons">alternate_email</span>
+      <a>CONNECT</a>
+    </div>
+    <div>
+      <span class="material-icons">rss_feed</span>
+      <a>DISCOVER</a>
+    </div>
+    <div>
+      <span class="material-icons">person</span>
+      <a>PROFILE</a>
+    </div>
+  </div>
+</div>
+<div class="top-bar">
+  <%= image_tag "twitter-icon.png" %>
+  <div>
+    <span class="material-icons">create</span>
+    <span class="material-icons">local_post_office</span>
+    <span class="material-icons">search</span>
+    <span class="material-icons">settings</span>
   </div>
 </div>
