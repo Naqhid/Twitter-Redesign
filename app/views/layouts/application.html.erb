@@ -13,7 +13,9 @@
   </head>
 
   <body>
-    <%= render 'layouts/sidebar' %>
+    <% if logged_in? %>
+      <%= render 'layouts/sidebar' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

@@ -20,8 +20,78 @@ $border-following: #e7e8ea;
   padding: 10px;
   display: flex;
 }
-body{
+@mixin background{
   background-color: #f5f6f8;
+}
+.login-background{
+  background-image: linear-gradient(to bottom right, #1b2a3d, #4e9fdc);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  padding: 80px;
+}
+.login{
+  background-color: $border-following;
+  color: $border-following;
+  height: 400px;
+  width: 700px;
+  margin: 0 auto;
+  display: flex;
+  padding: 0;
+  form{
+    width: 50%;
+  }
+  .image{
+    background-image: url("https://pbs.twimg.com/profile_images/1036730403514736650/PCRxFiEt.jpg");
+    background-size: cover;
+    width: 50%;
+  }
+  .path{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    align-items: center;
+    #login-icon{
+      color: #4e9fdc;
+      background-image: none;
+      padding-bottom: 10px;
+    }
+    div:first-child{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .btn {
+      justify-self: flex-end;
+      background-image: $selector-blue !important;
+      border-radius: 0;
+      border: none;
+      font-size: 25px;
+      color: white;
+      width: 80%;
+    }
+    div{
+      display: flex;
+      flex-direction: row;
+      color: $top-bar-font;
+      width: 80%;
+      span{
+        background-image: $selector-blue;
+        color: white;
+        font-size: 45px;
+      }
+      .username-field{
+        border-radius: 0;
+        border: none;
+        width: 100%;
+        padding-left: 10px;
+      }
+    }
+  }
+  div>*{
+    margin: 0;
+  }
 }
 .sidebar {
   background-color: $main-background;
