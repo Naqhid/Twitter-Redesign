@@ -9,6 +9,7 @@ $selector-blue: linear-gradient(to bottom right, #56abee, #4e9fdc);
 $top-bar-font: #376e9a;
 $new-tweets:#78b5e5;
 $border-following: #e7e8ea;
+$margin-middle: 30px 0 30px 350px;
 
 @mixin text{
   font-family: 'Poppins', sans-serif;
@@ -29,6 +30,10 @@ $border-following: #e7e8ea;
   width: 100%;
   position: absolute;
   padding: 80px;
+  @include text;
+}
+body{
+  @include background;
 }
 .login{
   background-color: $border-following;
@@ -84,7 +89,7 @@ $border-following: #e7e8ea;
       .username-field{
         border-radius: 0;
         border: none;
-        width: 100%;
+        width: calc(100% - 45px);
         padding-left: 10px;
       }
     }
@@ -175,12 +180,24 @@ $border-following: #e7e8ea;
   img{
     width: 40px;
   }
+  div{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+    a:hover{
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+    }
+  }
 }
 .rightbar-home{
   @include text;
   font-size: 20px;
   float: right;
   padding: 20px 55px;
+  margin-left: 30px;
   color: $font-color;
   border-left: 1px solid $border-following;
   border-bottom: 1px solid $border-following;
@@ -201,8 +218,9 @@ $border-following: #e7e8ea;
   }
 }
 .middle-section{
-  margin-top: 20px;
   color: $font-color;
+  margin: $margin-middle;
+  padding: 0;
   .tweet-section{
     height: 150px;
     @include tweets;
@@ -214,11 +232,11 @@ $border-following: #e7e8ea;
     height: 80px;
     border-radius: 10px;
     padding: 10px;
-    width: auto;
+    width: 100%;
   }
   .new-tweets{
     @include tweets;
-    margin-top: 20px;
+    margin-top: 30px;
     flex-direction: column;
     height: 300px;
     color: $new-tweets;
