@@ -139,10 +139,12 @@ body{
     flex-direction: column;
     justify-content: space-around;
   }
-  .tweet-typing{
+  .tweet{
     border: $border-following 1px solid;
     height: 80px;
     border-radius: 10px;
+    padding: 10px;
+    width: auto;
   }
   .new-tweets{
     @include tweets;

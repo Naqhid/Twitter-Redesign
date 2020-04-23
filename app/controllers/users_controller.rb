@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(username: params[:user][:username], fullname: params[:user][:fullname], photo: params[:user][:photo], coverimage: params[:user][:coverimage])
     if @user.save
-      redirect_to user_path(@user)
+      redirect_to home_path
       login(@user.id)
     else
       render 'new'

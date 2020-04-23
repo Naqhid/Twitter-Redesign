@@ -4,7 +4,7 @@ module SessionsHelper
   end
 
   def current_user
-    @user = User.find_by(username: session[:username]) if session[:username]
+    @user = User.find(session[:user_id]) if session[:user_id]
   end
 
   def logged_in?
@@ -12,6 +12,6 @@ module SessionsHelper
   end
 
   def logout
-    session.delete(:username)
+    session.delete(:user_id)
   end
 end

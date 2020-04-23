@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:session][:username])
     if @user
       login(@user.id)
-      redirect_to user_path(@user.id)
+      redirect_to home_path
     else
       flash.now[:message] = 'Incorrect'
       render 'new'
