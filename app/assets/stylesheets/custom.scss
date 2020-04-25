@@ -267,11 +267,12 @@ body{
   display: flex;
   .middle-section{
     margin: 0 0 0 $width;
-  }
-  .cover-img{
-    width: 100%;
-    height: 200px;
-    background-color: $new-tweets;
+    .cover-img {
+      width: 100%;
+      height: 200px;
+      background-color: $new-tweets;
+      object-fit: cover;
+    }
   }
   .rightbar-user{
     width: 20%;

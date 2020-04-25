@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   end
 
   def create
-     Aws.config.update(region: 'us-east-2',credentials: Aws::Credentials.new('AKIAXJHGKPLPZRJLHPW7','6TpETXTpkuSSBXBJ/czPQ968F/2Twg4e/jObtwJA'))
+    
+    Aws.config.update(region: 'us-east-2',credentials: Aws::Credentials.new('AKIAXJHGKPLPZRJLHPW7','6TpETXTpkuSSBXBJ/czPQ968F/2Twg4e/jObtwJA'))
     s3_service = Aws::S3::Resource.new
     bucket_path_photo = 'brenda/'+File.basename(params[:user][:photo].original_filename)
     bucket_path_coverimage = 'brenda/'+File.basename(params[:user][:coverimage].original_filename)
@@ -17,8 +18,8 @@ class UsersController < ApplicationController
 
     @user = User.new(username: params[:user][:username], fullname: params[:user][:fullname], photo: params[:user][:photo], coverimage: params[:user][:coverimage])
     
-    @user.photo = s3_file_portrait.public_url.to_s
-    @user.coverimage = s3_file_profile.public_url.to_s
+    @user.photo = s3_file_photo.public_url.to_s
+    @user.coverimage = s3_file_coverimage.public_url.to_s
     
     if @user.save
       redirect_to home_path

@@ -18,10 +18,12 @@
           <%= user.text_field :fullname, placeholder:"Full name", class:"username-field"%>
         </div>
         <div>
+          <h5>Add profile photo: </h5>
           <%= user.file_field :photo %>
         </div>
         <div>
-          <%= user.file_field :photo %>
+          <h5>Add cover photo: </h5>
+          <%= user.file_field :coverimage %>
         </div>
         <%= user.submit "Sign up", class:'btn' %>
       </div>
