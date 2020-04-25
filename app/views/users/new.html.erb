@@ -17,6 +17,12 @@
           <span class="material-icons">create</span>
           <%= user.text_field :fullname, placeholder:"Full name", class:"username-field"%>
         </div>
+        <div>
+          <%= user.file_field :photo %>
+        </div>
+        <div>
+          <%= user.file_field :photo %>
+        </div>
         <%= user.submit "Sign up", class:'btn' %>
       </div>
     <% end %>

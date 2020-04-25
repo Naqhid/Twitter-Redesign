@@ -2,20 +2,16 @@
   <h4>WHO TO FOLLOW</h4>
   <div>
     <img src="https://pbs.twimg.com/profile_images/1036730403514736650/PCRxFiEt.jpg">
-    <span>User name</span>
-  </div>
-  <div>
-    <img src="https://pbs.twimg.com/profile_images/1036730403514736650/PCRxFiEt.jpg">
-    <span>User name</span>
-  </div>
-  <div>
-    <img src="https://pbs.twimg.com/profile_images/1036730403514736650/PCRxFiEt.jpg">
-    <span>User name</span>
+    <span>
+      <% current_user.user_followers.all.each do |f|  %>
+        <%= f.username %>
+      <% end %>
+    </span>
   </div>
 </div>
 <div class="middle-section container">
   <div class="tweet-section">
-    <span>TWEET SOMETHING:</span>
+    <h4>TWEET SOMETHING:</h4>
     <div>
       <%= form_for @opinion do |opinion| %>
         <%= opinion.text_field :text, class:"tweet"%>
@@ -23,10 +19,11 @@
     </div>
   </div>
   <div class="new-tweets">
-    <span>NEW TWEETS</span>
+    <h4><%= Opinion.all.count %> NEW TWEETS</h4>
     <div>
         <% Opinion.all.each do |opinions|%>
-          <%= opinions.text %>
+          <h5><%= opinions.author.username %></h5>
+          <span><%= opinions.text %></span>
         <% end %>
     </div>
   </div>

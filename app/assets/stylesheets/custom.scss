@@ -8,8 +8,10 @@ $main-background: #213246;
 $selector-blue: linear-gradient(to bottom right, #56abee, #4e9fdc);
 $top-bar-font: #376e9a;
 $new-tweets:#78b5e5;
-$border-following: #e7e8ea;
-$margin-middle: 30px 0 30px 350px;
+$border-following: #bebfc1;
+$width: 270px;
+$margin-middle: 0 0 30px $width;
+$font-size: 15px;
 
 @mixin text{
   font-family: 'Poppins', sans-serif;
@@ -18,7 +20,7 @@ $margin-middle: 30px 0 30px 350px;
 @mixin tweets{
   background-color: white;
   border-radius: 10px;
-  padding: 10px;
+  padding: 20px;
   display: flex;
 }
 @mixin background{
@@ -34,6 +36,7 @@ $margin-middle: 30px 0 30px 350px;
 }
 body{
   @include background;
+  font-family: 'Poppins', sans-serif;
 }
 .login{
   background-color: $border-following;
@@ -101,16 +104,17 @@ body{
 .sidebar {
   background-color: $main-background;
   @include text;
-  width: 320px;
+  width: $width;
   height: 100%;
   position: absolute;
   .profile-user {
     display: flex;
     background-color: $top-background;
     padding: 20px;
-    font-size: 20px;
+    font-size: $font-size;
     h3{
       margin-left: 20px;
+      font-size: $font-size;
     }
   }
   .image{
@@ -133,6 +137,7 @@ body{
       margin-bottom: 0px;
       color: white;
       font-weight: bold;
+      font-size: $font-size;
     }
   }
   .divisor{
@@ -142,7 +147,7 @@ body{
   .profile-links{
     display: flex;
     flex-direction: column;
-    font-size: 20px;
+    font-size: $font-size;
     font-weight: 500px;
     :hover{
       background-image: $selector-blue;
@@ -165,7 +170,7 @@ body{
   }
 }
 .top-bar{
-  margin-left: 320px;
+  margin-left: $width;
   background-image: $selector-blue;
   height: 80px;
   display: flex;
@@ -194,7 +199,7 @@ body{
 }
 .rightbar-home{
   @include text;
-  font-size: 20px;
+  font-size: $font-size;
   float: right;
   padding: 20px 55px;
   margin-left: 30px;
@@ -204,6 +209,7 @@ body{
   h4{
     padding-bottom: 20px;
     border-bottom: 1px solid $border-following;
+    font-size: $font-size;
   }
   img{
     width: 70px;
@@ -221,11 +227,18 @@ body{
   color: $font-color;
   margin: $margin-middle;
   padding: 0;
+  h4{
+    font-size: 15px;
+  }
   .tweet-section{
     height: 150px;
     @include tweets;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin: 30px;
+    h4{
+      margin: 0;
+    }
   }
   .tweet{
     border: $border-following 1px solid;
@@ -236,14 +249,63 @@ body{
   }
   .new-tweets{
     @include tweets;
-    margin-top: 30px;
+    margin: 30px;
     flex-direction: column;
     height: 300px;
     color: $new-tweets;
-    font-weight: bold;
-    span{
-      padding-bottom: 10px;
+    h4{
       border-bottom: 1px solid $border-following;
+      font-weight: bold;
+    }
+    div{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+.user-section{
+  display: flex;
+  .middle-section{
+    margin: 0 0 0 $width;
+  }
+  .cover-img{
+    width: 100%;
+    height: 200px;
+    background-color: $new-tweets;
+  }
+  .rightbar-user{
+    width: 20%;
+    border-left: 1px solid $border-following;
+    .tweets-follows{
+      display: flex;
+      justify-content: space-evenly;
+      border: 1px solid $border-following;
+      .line{
+      width: 1px;
+      background-color: $border-following;
+      }
+      span{
+        margin-bottom: 20px;
+      }
+      .section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $border-following;
+        span:first-child{
+          margin: 20px 0  0 0;
+          color: $font-color;
+        }
+      }
+    }
+    .followed_by{
+      padding: 20px;
+      span{
+        padding-bottom: 20px;
+        border-bottom: 1px solid $border-following;
+        width: 100%;
+        display: block;
+      }
     }
   }
 }
