@@ -15,27 +15,44 @@
     </div>
   </div>
   <div class="rightbar-user">
-    <div class="photo-adduser">
-      <a><span class="material-icons">add_circle_outline</span></a>
+    <div class="user-det">
+      <div class="photo-adduser">
+        <span class="material-icons">add_circle_outline</span>
+        <img class="profile-photo" src="<%= @user.photo %>">
+        <span class="material-icons">list</span>
+      </div>
+      <div class="username-name">
+        <span><%= @user.fullname%></span>
+        <span>@<%= @user.username %></span>
+      </div>
     </div>
     <div class="tweets-follows">
       <div class="section">
-        <span>100</span>
+        <span><%= @user.created_opinions.all.count %></span>
         <span>Tweets</span>
       </div>
       <div class="line"></div>
       <div class="section">
-        <span>100</span>
+        <span><%= @user.followeds.all.count %></span>
         <span>Following</span>
       </div>
       <div class="line"></div>
       <div class="section">
-        <span>100</span>
+        <span><%= @user.followers.all.count %></span>
         <span>Followers</span>
       </div>
     </div>
     <div class="followed_by">
       <span>FOLLOWED BY</span>
+        <% @user.follower.each do |followers| %>
+          <div class="follower-det">
+            <img class="profile-photo" src="<%= followers.photo %>">
+            <div class="follower-name">
+              <a><%= followers.fullname %></a>
+              <a>@<%= followers.username %><a>
+            </div>
+          </div>
+        <% end %>
     </div>
   </div>
 </div>

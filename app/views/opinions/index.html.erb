@@ -1,13 +1,16 @@
 <div class="rightbar-home">
   <h4>WHO TO FOLLOW</h4>
-  <div>
-    <img src="https://pbs.twimg.com/profile_images/1036730403514736650/PCRxFiEt.jpg">
-    <span>
-      <% current_user.user_followers.all.each do |f|  %>
-        <%= f.username %>
-      <% end %>
-    </span>
-  </div>
+  <% current_user.not_followed.each do |f|  %>
+    <div class="user-section">
+      <div class="user-photo">
+        <img class="photo" src="<%= f.photo %>">
+      </div>
+      <div class="user-details"%>
+        <%= f.fullname %><br>
+        <a>@<%= f.username %></a>
+      </div>
+    </div>
+  <% end %>
 </div>
 <div class="middle-section container">
   <div class="tweet-section">

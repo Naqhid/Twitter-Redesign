@@ -10,7 +10,7 @@ $top-bar-font: #376e9a;
 $new-tweets:#78b5e5;
 $border-following: #bebfc1;
 $width: 270px;
-$margin-middle: 0 0 30px $width;
+$margin-middle: 0 0 0 $width;
 $font-size: 15px;
 
 @mixin text{
@@ -164,7 +164,6 @@ body{
     }
     div{
       display: flex;
-      align-items: baseline;
       padding: 20px;
     }
   }
@@ -201,20 +200,30 @@ body{
   @include text;
   font-size: $font-size;
   float: right;
-  padding: 20px 55px;
+  width: 20%;
+  padding: 30px;
   margin-left: 30px;
   color: $font-color;
   border-left: 1px solid $border-following;
   border-bottom: 1px solid $border-following;
+  .user-section{
+    display: flex;
+    .user-details{
+      display: flex;
+      flex-direction: column;
+      padding-left: 20px;
+    }
+  }
   h4{
     padding-bottom: 20px;
     border-bottom: 1px solid $border-following;
     font-size: $font-size;
   }
   img{
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-radius: 40px;
+    background-color: $border-following;
   }
   div{
     margin-top: 20px;
@@ -256,6 +265,7 @@ body{
     h4{
       border-bottom: 1px solid $border-following;
       font-weight: bold;
+      padding-bottom: 20px;
     }
     div{
       display: flex;
@@ -275,12 +285,46 @@ body{
     }
   }
   .rightbar-user{
-    width: 20%;
+    width: 310px;
     border-left: 1px solid $border-following;
+    .user-det{
+      padding: 20px;
+    }
+    .photo-adduser{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      a{
+        font-size: 40px;
+        margin-right: 10px;
+      }
+      span{
+        color: $border-following;
+        font-size: 40px;
+      }
+    }
+    .username-name{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      span{
+        padding-top: 10px;
+      }
+    }
+    .profile-photo{
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 50px;
+      background-color: $new-tweets;
+    }
     .tweets-follows{
       display: flex;
       justify-content: space-evenly;
-      border: 1px solid $border-following;
+      border-top: 1px solid $border-following;
+      border-bottom: 1px solid $border-following;
+      flex-flow: wrap;
       .line{
       width: 1px;
       background-color: $border-following;
@@ -293,6 +337,7 @@ body{
         flex-direction: column;
         align-items: center;
         color: $border-following;
+        width: 33%;
         span:first-child{
           margin: 20px 0  0 0;
           color: $font-color;
@@ -306,6 +351,32 @@ body{
         border-bottom: 1px solid $border-following;
         width: 100%;
         display: block;
+      }
+      .follower-det{
+        display: flex;
+        padding-top: 20px;
+        img{
+          width: 60px;
+          height: 60px;
+          margin-right: 20px;
+        }
+        .follower-name{
+          display: flex;
+          flex-direction: column;
+          a{
+            color: $font-color;
+          }
+          a:hover{
+            cursor: pointer;
+            text-decoration: none;
+          }
+          a:first-child{
+            color: $font-color;
+            font-weight: bold;
+            padding-bottom: 5px;
+          }
+          
+        }
       }
     }
   }
