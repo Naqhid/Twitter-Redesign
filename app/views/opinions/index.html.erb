@@ -1,28 +1,15 @@
-<div class="rightbar-home">
-  <h4>WHO TO FOLLOW</h4>
-  <% current_user.not_followed.each do |f|  %>
-    <div class="user-section">
-      <div class="user-photo">
-        <img class="photo" src="<%= f.photo %>">
-      </div>
-      <div class="user-details"%>
-        <%= link_to f.username, user_path(f.id) %>
-        <%= f.fullname %>
+ <div class="home-user">
+  <div class="middle-section container">
+    <div class="tweet-section">
+      <h4>TWEET SOMETHING:</h4>
+      <div>
+        <%= form_for @opinion do |opinion| %>
+          <%= opinion.text_field :text, class:"tweet"%>
+        <% end %>
       </div>
     </div>
-  <% end %>
-</div>
-<div class="middle-section container">
-  <div class="tweet-section">
-    <h4>TWEET SOMETHING:</h4>
-    <div>
-      <%= form_for @opinion do |opinion| %>
-        <%= opinion.text_field :text, class:"tweet"%>
-      <% end %>
-    </div>
-  </div>
-  <div class="new-tweets">
-    <h4><%= Opinion.all.count %> NEW TWEETS</h4>
+    <div class="new-tweets">
+      <h4><%= Opinion.all.count %> NEW TWEETS</h4>
       <% Opinion.ordered_by_most_recent.all.each do |opinions|%>
         <div class="user-opinions">
           <img src="<%= opinions.author.photo %>">
@@ -33,5 +20,19 @@
         </div>
       <% end %>
     </div>
+  </div>
+  <div class="rightbar-home">
+    <h4>WHO TO FOLLOW</h4>
+    <% current_user.not_followed.each do |f|  %>
+      <div class="user-section">
+        <div class="user-photo">
+          <img class="photo" src="<%= f.photo %>">
+        </div>
+        <div class="user-details"%>
+          <%= link_to f.username, user_path(f.id) %>
+          <%= f.fullname %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

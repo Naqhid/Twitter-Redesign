@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
   def create
     
-    Aws.config.update(region: 'us-east-2')
     s3_service = Aws::S3::Resource.new
     bucket_path_photo = 'brenda/'+File.basename(params[:user][:photo].original_filename)
     bucket_path_coverimage = 'brenda/'+File.basename(params[:user][:coverimage].original_filename)

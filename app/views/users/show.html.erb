@@ -1,12 +1,6 @@
 <div class="user-section">
   <div class="middle-section container">
-    <img class="cover-img" src="<%= @user.photo %>">
-    <div class="tweet-section">
-      <h4>TWEET SOMETHING:</h4>
-      <div>
-        
-      </div>
-    </div>
+    <img class="cover-img" src="<%= @user.coverimage %>">
     <div class="new-tweets">
       <h4>NEW TWEETS</h4>
       <% @user.created_opinions.all.each  do |opinion| %>
@@ -23,7 +17,7 @@
   <div class="rightbar-user">
     <div class="user-det">
       <div class="photo-adduser">
-        <% if !current_user.already_follow?(@user.id) %>
+        <% if !current_user.already_follow?(@user.id) && @user.id!=current_user.id%>
           <%= link_to follow_user_path(@user.id) do %>
             <span class="material-icons">add_circle_outline</span>
           <% end %>
