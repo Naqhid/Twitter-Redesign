@@ -6,8 +6,8 @@
         <img class="photo" src="<%= f.photo %>">
       </div>
       <div class="user-details"%>
-        <%= f.fullname %><br>
-        <%= link_to "@"+f.username, user_path(f.id) %>
+        <%= link_to f.username, user_path(f.id) %>
+        <%= f.fullname %>
       </div>
     </div>
   <% end %>

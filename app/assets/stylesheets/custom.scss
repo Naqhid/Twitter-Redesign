@@ -12,6 +12,7 @@ $border-following: #bebfc1;
 $width: 270px;
 $margin-middle: 0 0 0 $width;
 $font-size: 15px;
+$accent-color: #374252;
 
 @mixin text{
   font-family: 'Poppins', sans-serif;
@@ -212,8 +213,13 @@ body{
       display: flex;
       flex-direction: column;
       padding-left: 20px;
+      color: $font-color;
       a:hover{
         cursor: pointer;
+      }
+      a{
+        font-weight: bold;
+        color: $font-color;
       }
     }
   }
@@ -282,6 +288,9 @@ body{
           margin-top: 0;
           font-weight: bold;
         }
+        a{
+          color: $font-color;
+        }
       }
       img {
         width: 60px;
@@ -295,6 +304,9 @@ body{
 }
 .user-section{
   display: flex;
+  a{
+    cursor: pointer;
+  }
   .middle-section{
     margin: 0 0 0 $width;
     .cover-img {
@@ -302,6 +314,26 @@ body{
       height: 200px;
       background-color: $new-tweets;
       object-fit: cover;
+    }
+    .user-det{
+      display: flex;
+      flex-direction: row;
+      margin-top: 20px;
+      img{
+        width: 60px;
+        height: 60px;
+        margin-right: 20px;
+        background-color: $new-tweets;
+        border: none;
+      }
+      .user-name{
+        display: flex;
+        flex-direction: column;
+        color: $accent-color;
+        span{
+          font-weight: bold;
+        }
+      }
     }
   }
   .rightbar-user{
@@ -316,11 +348,12 @@ body{
       align-items: center;
       a{
         font-size: 40px;
-        margin-right: 10px;
       }
       span{
         color: $border-following;
         font-size: 40px;
+        justify-content: center;
+        display: flex;
       }
     }
     .username-name{

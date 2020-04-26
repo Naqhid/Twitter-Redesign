@@ -18,9 +18,15 @@ class User < ApplicationRecord
     end
     followed_ids.push(id)
 
-    User.all.where.not(id: followed_ids)
+    User.all.where.not(id: followed_ids).order(created_at: :desc)
   end
   def follower 
     User.all.where(id:follower_ids)
+  end
+  def follow_user(user_id)
+    @follow = Following.create(follower_id: id, followed_id: user_id)
+  end
+  def already_follow?(user_id)
+    true if Following.find_by(follower_id: id, followed_id: user_id)
   end
 end

@@ -9,15 +9,27 @@
     </div>
     <div class="new-tweets">
       <h4>NEW TWEETS</h4>
-      <div>
-          HOLA
-      </div>
+      <% @user.created_opinions.all.each  do |opinion| %>
+        <div class="user-det">
+          <img class="user-photo" src="<%= @user.photo %>">
+          <div class="user-name">
+            <span><%= @user.username %></span>
+            <span><%= opinion.text%></span>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="rightbar-user">
     <div class="user-det">
       <div class="photo-adduser">
-        <span class="material-icons">add_circle_outline</span>
+        <% if !current_user.already_follow?(@user.id) %>
+          <%= link_to follow_user_path(@user.id) do %>
+            <span class="material-icons">add_circle_outline</span>
+          <% end %>
+          <% else %>
+            <span class="material-icons" style="color: #376e9a">add_circle_outline</span>
+        <% end %>
         <img class="profile-photo" src="<%= @user.photo %>">
         <span class="material-icons">list</span>
       </div>
@@ -44,11 +56,11 @@
     </div>
     <div class="followed_by">
       <span>FOLLOWED BY</span>
-        <% @user.follower.each do |followers| %>
+        <% @user.user_followers.each do |followers| %>
           <div class="follower-det">
             <img class="profile-photo" src="<%= followers.photo %>">
             <div class="follower-name">
-              <a><%= followers.fullname %></a>
+              <%= link_to followers.fullname, user_path(followers.id) %></a>
               <a>@<%= followers.username %><a>
             </div>
           </div>

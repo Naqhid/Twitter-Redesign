@@ -32,4 +32,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     #@opinions = User.created_opinions.ordered_by_most_recent
   end
+  def follow_user
+    current_user.follow_user(params[:id])
+    redirect_to user_path(params[:id])
+  end
 end

@@ -5,31 +5,23 @@
   </div>
   <div class="profile-follows">
     <div class="follows">
-      <h4>200</h4>
+      <h4><%= current_user.followeds.all.count %></h4>
       <p>Following</p>
     </div>
     <div class="divisor"></div>
     <div class="follows">
-      <h4>200</h4>
+      <h4><%= current_user.followers.all.count %></h4>
       <p>Followers</p>
     </div>
   </div>
   <div class="profile-links">
     <div>
       <span class="material-icons">home</span>
-      <a>HOME</a>
-    </div>
-    <div>
-      <span class="material-icons">alternate_email</span>
-      <a>CONNECT</a>
-    </div>
-    <div>
-      <span class="material-icons">rss_feed</span>
-      <a>DISCOVER</a>
+      <%= link_to "HOME", home_path %>
     </div>
     <div>
       <span class="material-icons">person</span>
-      <a>PROFILE</a>
+      <%= link_to "PROFILE", user_path(current_user.id) %>
     </div>
   </div>
 </div>
