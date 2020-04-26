@@ -7,7 +7,7 @@
       </div>
       <div class="user-details"%>
         <%= f.fullname %><br>
-        <a>@<%= f.username %></a>
+        <%= link_to "@"+f.username, user_path(f.id) %>
       </div>
     </div>
   <% end %>
@@ -23,11 +23,15 @@
   </div>
   <div class="new-tweets">
     <h4><%= Opinion.all.count %> NEW TWEETS</h4>
-    <div>
-        <% Opinion.all.each do |opinions|%>
-          <h5><%= opinions.author.username %></h5>
-          <span><%= opinions.text %></span>
-        <% end %>
+      <% Opinion.ordered_by_most_recent.all.each do |opinions|%>
+        <div class="user-opinions">
+          <img src="<%= opinions.author.photo %>">
+          <div class="user-details"> 
+            <h5><%= link_to opinions.author.username, user_path(opinions.author.id) %></h5>
+            <span><%= opinions.text %></span>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

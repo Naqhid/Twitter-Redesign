@@ -212,6 +212,9 @@ body{
       display: flex;
       flex-direction: column;
       padding-left: 20px;
+      a:hover{
+        cursor: pointer;
+      }
     }
   }
   h4{
@@ -223,7 +226,7 @@ body{
     width: 60px;
     height: 60px;
     border-radius: 40px;
-    background-color: $border-following;
+    background-color: $new-tweets;
   }
   div{
     margin-top: 20px;
@@ -266,10 +269,27 @@ body{
       border-bottom: 1px solid $border-following;
       font-weight: bold;
       padding-bottom: 20px;
+      margin: 0;
     }
-    div{
+    .user-opinions{
       display: flex;
-      flex-direction: column;
+      margin-top: 20px;
+      .user-details{
+        display: flex;
+        flex-direction: column;
+        color: $font-color;
+        h5{
+          margin-top: 0;
+          font-weight: bold;
+        }
+      }
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 40px;
+        margin-right: 20px;
+        background-color: $new-tweets;
+      }
     }
   }
 }
