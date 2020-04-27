@@ -446,6 +446,8 @@ body{
           height: 60px;
           margin-right: 20px;
           background-color: $new-tweets;
+          object-fit: cover;
+          border-radius: 30px;
         }
         .follower-name {
           display: flex;
