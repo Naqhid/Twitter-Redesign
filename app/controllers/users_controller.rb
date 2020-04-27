@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def create
     s3_service = Aws::S3::Resource.new
-    @user = User.new(username: params[:user][:username], fullname: params[:user][:fullname])
+    @user = User.new(user_param)
     if params[:user][:photo] && params[:user][:coverimage]
       bucket_path_photo = 'brenda/' + File.basename(params[:user][:photo].original_filename)
       bucket_path_coverimage = 'brenda/' + File.basename(params[:user][:coverimage].original_filename)
@@ -58,8 +58,8 @@ class UsersController < ApplicationController
       @user.coverimage = s3_file_coverimage.public_url.to_s
     end
 
-    @user.username=params[:user][:username]
-    @user.fullname=params[:user][:fullname]
+    @user.username=user_param[:username]
+    @user.fullname=user_param[:fullname]
 
     if @user.save
       flash[:success] = "Profile updated!"
@@ -81,5 +81,11 @@ class UsersController < ApplicationController
 
   def require_logout
     redirect_to home_path if current_user
+  end
+
+  private
+
+  def user_param
+    params.require('user').permit(:username, :fullname)
   end
 end

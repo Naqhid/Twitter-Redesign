@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(username: params[:session][:username])
+    @user = User.find_by(session_param)
     if @user
       login(@user.id)
       redirect_to home_path
@@ -22,5 +22,11 @@ class SessionsController < ApplicationController
   
   def require_logout
     redirect_to home_path if current_user
+  end
+
+  private
+
+  def session_param
+    params.require('session').permit(:username)
   end
 end

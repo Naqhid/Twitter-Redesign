@@ -2,7 +2,8 @@ class OpinionsController < ApplicationController
   before_action :require_login, only: %i[create show index]
 
   def create
-    @opinion = Opinion.new(author_id: current_user.id, text: params[:opinion][:text])
+    @opinion = Opinion.new(opinion_param)
+    @opinion.author_id = current_user.id
     if @opinion.save
       redirect_to home_path
     else
@@ -20,5 +21,11 @@ class OpinionsController < ApplicationController
 
   def require_login
     redirect_to login_path unless current_user
+  end
+
+  private
+
+  def opinion_param
+    params.require('opinion').permit(:text)
   end
 end
