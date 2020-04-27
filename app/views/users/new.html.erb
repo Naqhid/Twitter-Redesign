@@ -4,7 +4,11 @@
     </div>
     <%= form_for @user do |user| %>
       <div class="path">
-      <%= flash[:messages] %>
+      <% if flash[:error_messages]%>
+        <% flash[:error_messages].each do |errormessage|%>
+          <%= errormessage %><br>
+        <% end %>
+      <% end %>
         <div>
           <span class="material-icons" id="login-icon">face</span>
           <h3>Sign up!</h3>

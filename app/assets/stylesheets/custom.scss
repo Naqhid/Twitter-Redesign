@@ -133,7 +133,6 @@ body{
     font-size: $font-size;
     width: 310px;
     padding: 30px;
-    height: 100%;
     color: $font-color;
     border-left: 1px solid $border-following;
     border-bottom: 1px solid $border-following;
@@ -153,7 +152,6 @@ body{
       }
       .rightbar-user {
         width: 310px;
-        height: 100%;
         border-left: 1px solid $border-following;   
       }
     }
@@ -167,6 +165,7 @@ body{
       height: 60px;
       border-radius: 40px;
       background-color: $new-tweets;
+      object-fit: cover;
     }
     div {
       margin-top: 20px;
@@ -233,6 +232,7 @@ body{
           border-radius: 40px;
           margin-right: 20px;
           background-color: $new-tweets;
+          object-fit: cover;
         }
       }
     }
@@ -258,6 +258,7 @@ body{
     background-color: white;
     width: 80px;
     height: 80px;
+    object-fit: cover;
   }
   .profile-follows{
     display: flex;
@@ -380,6 +381,7 @@ body{
           margin-right: 20px;
           background-color: $new-tweets;
           border: none;
+          object-fit: cover;
         }
         .user-name {
           display: flex;
@@ -394,7 +396,6 @@ body{
   }
   .rightbar-user{
     width: 310px;
-    height: 100%;
     border-left: 1px solid $border-following;
     .user-det {
       padding: 20px;
