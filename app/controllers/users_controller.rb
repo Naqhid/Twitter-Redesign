@@ -40,7 +40,6 @@ class UsersController < ApplicationController
   end
 
   def update
-
     s3_service = Aws::S3::Resource.new
     @user = User.find(current_user.id)
 
@@ -58,11 +57,11 @@ class UsersController < ApplicationController
       @user.coverimage = s3_file_coverimage.public_url.to_s
     end
 
-    @user.username=user_param[:username]
-    @user.fullname=user_param[:fullname]
+    @user.username = user_param[:username]
+    @user.fullname = user_param[:fullname]
 
     if @user.save
-      flash[:success] = "Profile updated!"
+      flash[:success] = 'Profile updated!'
       redirect_to edit_user_path(current_user.id)
     else
       flash.now[:message_edit] = @user.errors.full_messages

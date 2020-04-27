@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
     logout
     redirect_to login_path
   end
-  
+
   def require_logout
     redirect_to home_path if current_user
   end
