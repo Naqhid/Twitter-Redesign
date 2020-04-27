@@ -28,7 +28,9 @@
 <div class="top-bar">
   <%= image_tag "twitter-icon.png" %>
   <div>
-    <span class="material-icons">create</span>
+    <%= link_to edit_user_path(current_user.id) do%>
+      <span class="material-icons">create</span> 
+    <% end %>
     <span class="material-icons">local_post_office</span>
     <span class="material-icons">search</span>
     <span class="material-icons">settings</span>
