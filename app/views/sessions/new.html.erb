@@ -13,7 +13,10 @@
           <span class="material-icons">person</span>
           <%= f.text_field :username, placeholder:"Username", class:"username-field"%>
         </div>
-        <%= f.submit "Login", class:'btn' %>
+        <div>
+          <span>Dont have an account? <%= link_to "Sign up", signup_path %></span>
+          <%= f.submit "Login", class:'btn' %>
+        </div>
       </div>
     <% end %>
   </div>

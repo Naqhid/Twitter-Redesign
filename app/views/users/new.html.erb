@@ -25,7 +25,10 @@
           <h5>Add cover photo: </h5>
           <%= user.file_field :coverimage %>
         </div>
-        <%= user.submit "Sign up", class:'btn' %>
+        <div>
+          <span>Already have an account? <%= link_to "Login", login_path %></span>
+          <%= user.submit "Sign up", class:'btn' %>
+        </div>
       </div>
     <% end %>
   </div>

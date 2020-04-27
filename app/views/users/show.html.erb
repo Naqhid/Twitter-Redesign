@@ -2,7 +2,7 @@
   <div class="middle-section container">
     <img class="cover-img" src="<%= @user.coverimage %>">
     <div class="new-tweets">
-      <h4>NEW TWEETS</h4>
+      <h4>ALL TWEETS</h4>
       <% @user.created_opinions.all.each  do |opinion| %>
         <div class="user-det">
           <img class="user-photo" src="<%= @user.photo %>">
