@@ -1,10 +1,10 @@
 <div class="login-background">
-  <%= flash[:message] %>
   <div class="login">
     <div class="image">
     </div>
     <%= form_for @user do |user| %>
       <div class="path">
+      <%= flash[:messages] %>
         <div>
           <span class="material-icons" id="login-icon">face</span>
           <h3>Sign up!</h3>

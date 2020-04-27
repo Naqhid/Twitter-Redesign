@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       login(@user.id)
       redirect_to home_path
     else
-      flash.now[:message] = 'Incorrect'
+      flash.now[:message] = 'Please verify your submission'
       render 'new'
     end
   end

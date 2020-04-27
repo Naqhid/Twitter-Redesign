@@ -52,7 +52,7 @@ body{
     width: 50%;
   }
   .image{
-    background-image: url("https://pbs.twimg.com/profile_images/1036730403514736650/PCRxFiEt.jpg");
+    background-image: url("https://d3t4nwcgmfrp9x.cloudfront.net/upload/como-conseguir-mas-seguidores-twitter.jpg");
     background-size: cover;
     width: 50%;
   }
@@ -62,6 +62,12 @@ body{
     justify-content: space-evenly;
     height: 100%;
     align-items: center;
+    #user_photo{
+      width: 100%;
+    }
+    #user_coverimage {
+      width: 100%;
+    }
     #login-icon{
       color: #4e9fdc;
       background-image: none;
@@ -121,11 +127,13 @@ body{
 .home-user{
   display: flex;
   flex-direction: row;
+  height: 100%;
   .rightbar-home {
     @include text;
     font-size: $font-size;
     width: 310px;
     padding: 30px;
+    height: 100%;
     color: $font-color;
     border-left: 1px solid $border-following;
     border-bottom: 1px solid $border-following;
@@ -142,10 +150,10 @@ body{
           background-color: $new-tweets;
           object-fit: cover;
         }
-        
       }
       .rightbar-user {
         width: 310px;
+        height: 100%;
         border-left: 1px solid $border-following;   
       }
     }
@@ -196,7 +204,7 @@ body{
       @include tweets;
       margin: 30px;
       flex-direction: column;
-      height: 300px;
+      height: 100%;
       color: $new-tweets;
       h4 {
         border-bottom: 1px solid $border-following;
@@ -235,7 +243,7 @@ body{
   @include text;
   width: $width;
   height: 100%;
-  position: absolute;
+  position: fixed;
   .profile-user {
     display: flex;
     background-color: $top-background;
@@ -294,6 +302,7 @@ body{
     div{
       display: flex;
       padding: 20px;
+      align-items: center;
     }
   }
 }
@@ -354,7 +363,6 @@ body{
       @include tweets;
       margin: 30px;
       flex-direction: column;
-      height: 300px;
       color: $new-tweets;
       h4 {
         border-bottom: 1px solid $border-following;
@@ -386,6 +394,7 @@ body{
   }
   .rightbar-user{
     width: 310px;
+    height: 100%;
     border-left: 1px solid $border-following;
     .user-det {
       padding: 20px;
