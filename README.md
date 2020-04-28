@@ -6,6 +6,9 @@
 
 ![Login Path](/public/signin.png)
 ![Signup Path](/public/signup.png)
+![Home Path](/public/home.png)
+![Profile Path](/public/profile.png)
+![Edit Path](/public/edit.png)
 
 ## Features
 
