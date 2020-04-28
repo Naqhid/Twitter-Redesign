@@ -14,12 +14,7 @@ class User < ApplicationRecord
   has_many :user_followeds, through: :followeds, source: :followed
 
   def not_followed
-    followed_ids = user_followeds.map do |f|
-      f.id
-    end
-    followed_ids.push(id)
-
-    User.all.where.not(id: followed_ids).order(created_at: :desc)
+    User.all.where.not(id: user_followeds.select(:id)).where.not(id: id).order(created_at: :desc)
   end
 
   def follow_user(user_id)

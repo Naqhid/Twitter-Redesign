@@ -10,8 +10,8 @@
       </div>
     </div>
     <div class="new-tweets">
-      <h4><%= Opinion.all.count %> NEW TWEETS</h4>
-      <% Opinion.includes(:author).ordered_by_most_recent.each do |opinions|%>
+      <h4><%= Opinion.count %> NEW TWEETS</h4>
+      <% Opinion.newsfeed_opinions.each do |opinions|%>
         <div class="user-opinions">
           <img src="<%= opinions.author.photo %>">
           <div class="user-details"> 
