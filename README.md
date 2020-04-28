@@ -25,7 +25,7 @@
       - User photo.
       - Button to follow a user.
       - Stats: total number of tweets, number of followers and number of following users.
-      - List of people who follow this user.
+      - List of people who follow this user
 
 ## Built With
 
