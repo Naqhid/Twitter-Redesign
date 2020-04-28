@@ -8,10 +8,7 @@ class UsersController < ApplicationController
   def create
     s3_service = Aws::S3::Resource.new
     @user = User.new(user_param)
-    if params[:user][:photo] && params[:user][:coverimage]
-      attach_files(s3_service)
-    end
-
+    attach_files(s3_service) if params[:user][:photo] && params[:user][:coverimage]
     if @user.save
       redirect_to home_path
       login(@user.id)
@@ -33,10 +30,7 @@ class UsersController < ApplicationController
     s3_service = Aws::S3::Resource.new
     @user = User.find(current_user.id)
 
-    if params[:user][:photo] && params[:user][:coverimage]
-      attach_files(s3_service)
-    end
-
+    attach_files(s3_service) if params[:user][:photo] && params[:user][:coverimage]
     @user.username = user_param[:username]
     @user.fullname = user_param[:fullname]
 
