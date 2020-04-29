@@ -22,7 +22,6 @@ class User < ApplicationRecord
     @user = User.find(user_id)
     @user.count_followed += 1
     self.count_follower += 1
-
     @user.save
     self.save
   end
