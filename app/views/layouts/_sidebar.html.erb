@@ -5,12 +5,12 @@
   </div>
   <div class="profile-follows">
     <div class="follows">
-      <h4><%= current_user.followeds.all.count %></h4>
+      <h4><%= current_user.count_follower %></h4>
       <p>Following</p>
     </div>
     <div class="divisor"></div>
     <div class="follows">
-      <h4><%= current_user.followers.all.count %></h4>
+      <h4><%= current_user.count_followed %></h4>
       <p>Followers</p>
     </div>
   </div>

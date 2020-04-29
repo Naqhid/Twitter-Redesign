@@ -19,6 +19,12 @@ class User < ApplicationRecord
 
   def follow_user(user_id)
     @follow = Following.create(follower_id: id, followed_id: user_id)
+    @user = User.find(user_id)
+    @user.count_followed+=1
+    self.count_follower+=1
+
+    @user.save
+    self.save
   end
 
   def already_follow?(user_id)

@@ -34,17 +34,17 @@
     </div>
     <div class="tweets-follows">
       <div class="section">
-        <span><%= @user.created_opinions.all.count %></span>
+        <span><%= @user.opinion_count %></span>
         <span>Tweets</span>
       </div>
       <div class="line"></div>
       <div class="section">
-        <span><%= @user.followeds.all.count %></span>
+        <span><%= @user.count_follower %></span>
         <span>Following</span>
       </div>
       <div class="line"></div>
       <div class="section">
-        <span><%= @user.followers.all.count %></span>
+        <span><%= @user.count_followed %></span>
         <span>Followers</span>
       </div>
     </div>
