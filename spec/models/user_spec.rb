@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
   let(:user1) { User.new(username: 'user1', fullname:'name1',
                         photo: 'link', coverimage: 'link') }
   let(:user2) { User.new(username: 'user2', fullname:'name2',

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Opinion, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
   let(:user1) { User.create(username: 'user1', fullname:'name1',
                         photo: 'link', coverimage: 'link') }
 
