@@ -50,6 +50,8 @@ Style/HashTransformKeys:
   Enabled: true
 Style/HashTransformValues:
   Enabled: true
+Style/RedundantSelf:
+  Enabled: false
 Style/SymbolProc:
   Enabled: false
 Lint/RaiseException:

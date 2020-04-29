@@ -5,7 +5,7 @@ class OpinionsController < ApplicationController
     @opinion = Opinion.new(opinion_param)
     @opinion.author_id = current_user.id
     if @opinion.save
-      current_user.opinion_count+=1
+      current_user.opinion_count += 1
       current_user.save
       redirect_to home_path
     else
