@@ -82,7 +82,7 @@ Open `http://localhost:3000/` in your browser.
 
 - Github: [@bren2102](https://github.com/bren2102) 
 - Twitter: [@BrendaYucra2](https://twitter.com/BrendaYucra)
-- Linkedin: [Brenda Yucra](https://www.linkedin.com/in/brenda-yucra-51980681/)
+- Linkedin: [Brenda Yucra](https://www.linkedin.com/in/brenda-yucra/)
 
 ## Credits
 
